@@ -34,6 +34,8 @@ The extension recognizes the following file types:
 - `.amo` - AMO source files
 - `.amotext` - AMO text output files
 - `.samtxt` - Regen files (e.g. `Regen_xyz.txt.samtxt`)
+- `.gpc` - Generation files of the PBX (same record format as regen files)
+- `.pro` - Session logs of the AMO terminal (command echo `  <ABFRAGEN-…`, messages `L01:`, `M1:`, `H500:`). Note: `.pro` is also used by other tools (for example Qt project files); if VS Code picks the wrong language, choose it once via *Change Language Mode* or remove the association with `files.associations`.
 
 Plain `.txt` files are not associated automatically. To treat selected text files as AMO, add to your settings:
 

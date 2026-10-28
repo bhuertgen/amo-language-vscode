@@ -60,7 +60,9 @@
         "extensions": [
           ".amo",
           ".amotext",
-          ".samtxt"
+          ".samtxt",
+          ".gpc",
+          ".pro"
         ],
         "configuration": "./language-configuration.json"
       }
