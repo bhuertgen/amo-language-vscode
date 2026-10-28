@@ -19,6 +19,16 @@
       }
     },
     {
+      "name": "comment.line.amo",
+      "comment": "record-header",
+      "match": "^[ABC]\\d{3}(?:\\s.*)?$"
+    },
+    {
+      "name": "comment.line.amo",
+      "comment": "record-timestamp",
+      "match": "^T[12]\\s+\\d+\\s+\\d{4}-\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}.*$"
+    },
+    {
       "name": "meta.output-header.amo",
       "match": "^H\\d+:\\s*",
       "captures": {
@@ -56,7 +66,7 @@
     },
     {
       "name": "meta.command.action-de.amo",
-      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+)?)(EINRICHTEN|EINRICHT|EINR|AENDERN|AEND|AE|ABFRAGEN|ABFR|AB|LOESCHEN|LOESCH|LOES|LOE|REGENERIEREN|EINSCHALTEN|EINSCH|EINS|AUSSCHALTEN|AUSSCH|AUSS|SETZEN|KOPIEREN|PRUEFEN|PRUEF|UMSCHALTEN|SAMMELN|AUSGABE|AUSG|UMBENENNEN|UMB|OPTIMIEREN)(-+)([A-Z][A-Z0-9]*)(?=\\s*[:;]|\\s*$)",
+      "match": "^(\\s*(?:[MT]\\d+\\s+\\d+\\s+)?)(EINRICHTEN|EINRICHT|EINR|AENDERN|AEND|AE|ABFRAGEN|ABFR|AB|LOESCHEN|LOESCH|LOES|LOE|REGENERIEREN|EINSCHALTEN|EINSCH|EINS|AUSSCHALTEN|AUSSCH|AUSS|SETZEN|KOPIEREN|PRUEFEN|PRUEF|UMSCHALTEN|SAMMELN|AUSGABE|AUSG|UMBENENNEN|UMB|OPTIMIEREN)(-+)([A-Z][A-Z0-9]*)(?=\\s*[:;]|\\s*$)",
       "captures": {
         "1": {
           "name": "meta.record-prefix.amo"
@@ -74,7 +84,7 @@
     },
     {
       "name": "meta.command.action-en.amo",
-      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+)?)(ADD|AD|CHANGE|CHAN|CHA|DISPLAY|DISPL|DISP|DIS|DELETE|DEL|REGENERATE|ACTIVATE|ACT|DEACTIVATE|DEACT|DEA|COPY|RENAME|SWITCHOVER|TEST|SET|OUTPUT|COLLECT|OPTIMIZE)(-+)([A-Z][A-Z0-9]*)(?=\\s*[:;]|\\s*$)",
+      "match": "^(\\s*(?:[MT]\\d+\\s+\\d+\\s+)?)(ADD|AD|CHANGE|CHAN|CHA|DISPLAY|DISPL|DISP|DIS|DELETE|DEL|REGENERATE|ACTIVATE|ACT|DEACTIVATE|DEACT|DEA|COPY|RENAME|SWITCHOVER|TEST|SET|OUTPUT|COLLECT|OPTIMIZE)(-+)([A-Z][A-Z0-9]*)(?=\\s*[:;]|\\s*$)",
       "captures": {
         "1": {
           "name": "meta.record-prefix.amo"
@@ -92,7 +102,7 @@
     },
     {
       "name": "meta.command.action.amo",
-      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+)?)(EXECUTE|EXEC|REGEN|REGE|REG|START|STA|STOP|RESTART|DUMP|INPUT)(-+)([A-Z][A-Z0-9]*)(?=\\s*[:;]|\\s*$)",
+      "match": "^(\\s*(?:[MT]\\d+\\s+\\d+\\s+)?)(EXECUTE|EXEC|REGEN|REGE|REG|START|STA|STOP|RESTART|DUMP|INPUT)(-+)([A-Z][A-Z0-9]*)(?=\\s*[:;]|\\s*$)",
       "captures": {
         "1": {
           "name": "meta.record-prefix.amo"
@@ -110,7 +120,7 @@
     },
     {
       "name": "meta.command.action-de-lower.amo",
-      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+)?)(einrichten|einricht|einr|aendern|aend|ae|abfragen|abfr|ab|loeschen|loesch|loes|loe|regenerieren|einschalten|einsch|eins|ausschalten|aussch|auss|setzen|kopieren|pruefen|pruef|umschalten|sammeln|ausgabe|ausg|umbenennen|umb|optimieren)(-+)([a-z][a-z0-9]*)(?=\\s*[:;])",
+      "match": "^(\\s*(?:[MT]\\d+\\s+\\d+\\s+)?)(einrichten|einricht|einr|aendern|aend|ae|abfragen|abfr|ab|loeschen|loesch|loes|loe|regenerieren|einschalten|einsch|eins|ausschalten|aussch|auss|setzen|kopieren|pruefen|pruef|umschalten|sammeln|ausgabe|ausg|umbenennen|umb|optimieren)(-+)([a-z][a-z0-9]*)(?=\\s*[:;])",
       "captures": {
         "1": {
           "name": "meta.record-prefix.amo"
@@ -128,7 +138,7 @@
     },
     {
       "name": "meta.command.action-en-lower.amo",
-      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+)?)(add|ad|change|chan|cha|display|displ|disp|dis|delete|del|regenerate|activate|act|deactivate|deact|dea|copy|rename|switchover|test|set|output|collect|optimize)(-+)([a-z][a-z0-9]*)(?=\\s*[:;])",
+      "match": "^(\\s*(?:[MT]\\d+\\s+\\d+\\s+)?)(add|ad|change|chan|cha|display|displ|disp|dis|delete|del|regenerate|activate|act|deactivate|deact|dea|copy|rename|switchover|test|set|output|collect|optimize)(-+)([a-z][a-z0-9]*)(?=\\s*[:;])",
       "captures": {
         "1": {
           "name": "meta.record-prefix.amo"
@@ -146,7 +156,7 @@
     },
     {
       "name": "meta.command.action-lower.amo",
-      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+)?)(execute|exec|regen|rege|reg|start|sta|stop|restart|dump|input)(-+)([a-z][a-z0-9]*)(?=\\s*[:;])",
+      "match": "^(\\s*(?:[MT]\\d+\\s+\\d+\\s+)?)(execute|exec|regen|rege|reg|start|sta|stop|restart|dump|input)(-+)([a-z][a-z0-9]*)(?=\\s*[:;])",
       "captures": {
         "1": {
           "name": "meta.record-prefix.amo"
@@ -164,7 +174,7 @@
     },
     {
       "name": "meta.command.two-part.amo",
-      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+)?)([A-Z]+)(-+)([A-Z][A-Z0-9]*)(?=\\s*[:;])",
+      "match": "^(\\s*(?:[MT]\\d+\\s+\\d+\\s+)?)([A-Z]+)(-+)([A-Z][A-Z0-9]*)(?=\\s*[:;])",
       "captures": {
         "1": {
           "name": "meta.record-prefix.amo"

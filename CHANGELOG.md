@@ -9,7 +9,7 @@ All notable changes to this extension are documented in this file.
 - Syntax highlighting for AMO scripts and regen files of OpenScape 4000 / HiPath 4000 (`.amo`, `.amotext`, `.samtxt`)
 - Commands in the form `ACTION-AMO:parameters;`, with the action word recognized in German (`EINRICHTEN`, `AENDERN`, `ABFRAGEN`, …), English (`ADD`, `CHANGE`, `DISPLAY`, …) or language-neutral (`EXEC`, `REGEN`, `START`, …), including short forms and lower case
 - AMO names with digits (for example `DTIM1`)
-- Regen files: the record prefix of `.samtxt` regens (`M2 1 `) is recognized
+- Regen and `.gpc` files: header lines (`A001`, `B001`, `C001`) and the time stamp lines (`T2 1 <date> <time>` at the start, `T1 1 <date> <time>` at the end) are comments; the record prefixes `M1`/`M2`/`T1`/`T2` before a command are recognized
 - Strings, hexadecimal values (`H'FFFF`), versions (`V10 R0.28.41`), decimals, `/* … */` comments (single line), message codes (`H500:`, `F04:`)
 - Two colorblind-friendly themes (light and dark); German and English action words get different colors, English additionally in italics
 - Snippets for common commands
