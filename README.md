@@ -146,7 +146,7 @@ AMO commands consist of an action and an AMO name (`ACTION-AMO:parameters;`). Th
 |--------|---------|
 | `EINRICHTEN` (`EINR`) | `ADD` |
 | `AENDERN` (`AEND`, `AE`) | `CHANGE` (`CHA`) |
-| `LOESCHEN` (`LOES`, `LOE`) | `DELETE` (`DEL`) |
+| `LOESCHEN` (`LOES`, `LOE`, `L`) | `DELETE` (`DEL`) |
 | `ABFRAGEN` (`ABFR`, `AB`) | `DISPLAY` (`DISP`, `DIS`) |
 | `REGENERIEREN` | `REGENERATE` |
 | `EINSCHALTEN` / `AUSSCHALTEN` | `ACTIVATE` (`ACT`) / `DEACTIVATE` (`DEACT`) |

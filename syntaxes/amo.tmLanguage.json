@@ -81,7 +81,7 @@
     },
     {
       "name": "meta.command.action-de.amo",
-      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+|<)?)(EINRICHTEN|EINRICHT|EINR|AENDERN|AEND|AE|ABFRAGEN|ABFR|AB|LOESCHEN|LOESCH|LOES|LOE|REGENERIEREN|EINSCHALTEN|EINSCH|EINS|AUSSCHALTEN|AUSSCH|AUSS|SETZEN|KOPIEREN|PRUEFEN|PRUEF|UMSCHALTEN|SAMMELN|AUSGABE|AUSG|UMBENENNEN|UMB|OPTIMIEREN)(-+)([A-Z][A-Z0-9]*)(?=\\s*[:;]|\\s*$)",
+      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+|<)?)(EINRICHTEN|EINRICHT|EINR|AENDERN|AEND|AE|ABFRAGEN|ABFR|AB|LOESCHEN|LOESCH|LOES|LOE|L|REGENERIEREN|EINSCHALTEN|EINSCH|EINS|AUSSCHALTEN|AUSSCH|AUSS|SETZEN|KOPIEREN|PRUEFEN|PRUEF|UMSCHALTEN|SAMMELN|AUSGABE|AUSG|UMBENENNEN|UMB|OPTIMIEREN)(-+)([A-Z][A-Z0-9]*)(?=\\s*[:;]|\\s*$)",
       "captures": {
         "1": {
           "name": "meta.record-prefix.amo"
@@ -135,7 +135,7 @@
     },
     {
       "name": "meta.command.action-de-lower.amo",
-      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+|<)?)(einrichten|einricht|einr|aendern|aend|ae|abfragen|abfr|ab|loeschen|loesch|loes|loe|regenerieren|einschalten|einsch|eins|ausschalten|aussch|auss|setzen|kopieren|pruefen|pruef|umschalten|sammeln|ausgabe|ausg|umbenennen|umb|optimieren)(-+)([a-z][a-z0-9]*)(?=\\s*[:;])",
+      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+|<)?)(einrichten|einricht|einr|aendern|aend|ae|abfragen|abfr|ab|loeschen|loesch|loes|loe|l|regenerieren|einschalten|einsch|eins|ausschalten|aussch|auss|setzen|kopieren|pruefen|pruef|umschalten|sammeln|ausgabe|ausg|umbenennen|umb|optimieren)(-+)([a-z][a-z0-9]*)(?=\\s*[:;])",
       "captures": {
         "1": {
           "name": "meta.record-prefix.amo"
