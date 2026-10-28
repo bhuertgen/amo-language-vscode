@@ -1,0 +1,45 @@
+/* Testdatei mit erfundenen Daten, keine Kundendaten */
+
+/* Deutsche Aktionen: orange, fett */
+EINRICHTEN-ANSU:ANLNUM,"TESTANLAGE","ABCDEF";
+AENDERN-FUNCT:LANG=GER,SLANG=GER;
+ABFRAGEN-VEGAS:LIST=KURZ,HWMOD=SWU&ADS;
+AB-DATE;
+ABFR-PASSW;
+LOESCHEN-WABE:266&&417,,6;
+L-WABE:5;
+EINR-DTIM1:1,2;
+
+/* Englische Aktionen: violett, fett und kursiv */
+ADD-ANSU:ANLNUM,"TESTANLAGE","ABCDEF";
+CHANGE-FUNCT:LANG=ENG,SLANG=ENG;
+CHAN-FUNCT:LANG=ENG;
+DISPLAY-VEGAS:LIST=SHORT;
+DISP-DATE;
+DELETE-WABE:266&&417,,6;
+REGENERATE-DBC;
+
+/* Sprachneutrale Aktionen: grau, fett */
+EXEC-APC:"BS-PCI  ",ADS,BP;
+EX-APC;
+INIT-DBC:1;
+RES-DBC;
+REGEN-APC;
+REG-FBTID;
+START-VEGAS;
+
+/* Kleingeschrieben, wie im Terminal getippt */
+chan-funct:slang=ger;
+ab-date;
+reg-cptp;
+
+/* Zahlen, Hex, Versionen, Strings */
+AENDERN-DIMSU:VRWCC,16379,3000;
+AENDERN-SDAT:H'FFFF,"Text in Anführungszeichen",V10 R1.42.0;
+/* Parameterwerte wie AFR1 oder IPV4 dürfen NICHT als Version gefärbt werden */
+AENDERN-BCSU:AFR1,IPV4,DEV1;
+
+/* Meldungen */
+H500:  AMO DATE  GESTARTET
+F04: ZIELDATEI EXISTIERT NICHT
+AENDERN DURCHGEFUEHRT;
