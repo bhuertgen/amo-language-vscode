@@ -37,6 +37,8 @@ The extension recognizes the following file types:
 - `.gpc` - Generation files of the PBX (same record format as regen files)
 - `.pro` - Session logs of the AMO terminal (command echo `  <ABFRAGEN-…`, messages `L01:`, `M1:`, `H500:`). Note: `.pro` is also used by other tools (for example Qt project files); if VS Code picks the wrong language, choose it once via *Change Language Mode* or remove the association with `files.associations`.
 
+In regen, `.gpc` and `.samtxt` files, the record prefix at the start of a line tells whether a command is active: `M1`/`M2` lines are commands, lines starting with `T1` or `T2` are commented out and are shown as comments (like `#` in other languages).
+
 Plain `.txt` files are not associated automatically. To treat selected text files as AMO, add to your settings:
 
 ```json
