@@ -1,0 +1,216 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "AMO",
+  "scopeName": "source.amo",
+  "fileTypes": [
+    "amo",
+    "amotext",
+    "samtxt",
+    "txt.samtxt"
+  ],
+  "patterns": [
+    {
+      "name": "comment.line.amo",
+      "match": "/\\*.*?(?:\\*?$|\\*/)",
+      "captures": {
+        "0": {
+          "name": "comment.line.amo"
+        }
+      }
+    },
+    {
+      "name": "meta.output-header.amo",
+      "match": "^H\\d+:\\s*",
+      "captures": {
+        "0": {
+          "name": "markup.heading.amo"
+        }
+      }
+    },
+    {
+      "name": "string.quoted.double.amo",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.amo",
+          "match": "\\\\."
+        }
+      ]
+    },
+    {
+      "name": "entity.name.tag.amo",
+      "match": "(?<![A-Za-z0-9])[FH]\\d+:"
+    },
+    {
+      "name": "constant.numeric.hex.amo",
+      "match": "H'[0-9A-Fa-f]+"
+    },
+    {
+      "name": "constant.numeric.version.amo",
+      "match": "(?<![A-Za-z0-9])[VR]\\d+(?:\\.\\d+)*(?:\\s+R\\d+(?:\\.\\d+)*)?(?![A-Za-z0-9])"
+    },
+    {
+      "name": "constant.numeric.decimal.amo",
+      "match": "\\b\\d+\\b"
+    },
+    {
+      "name": "meta.command.action-de.amo",
+      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+)?)(EINRICHTEN|EINRICHT|EINR|AENDERN|AEND|AE|ABFRAGEN|ABFR|AB|LOESCHEN|LOESCH|LOES|LOE|REGENERIEREN|EINSCHALTEN|EINSCH|EINS|AUSSCHALTEN|AUSSCH|AUSS|SETZEN|KOPIEREN|PRUEFEN|PRUEF|UMSCHALTEN|SAMMELN|AUSGABE|AUSG|UMBENENNEN|UMB|OPTIMIEREN)(-+)([A-Z][A-Z0-9]*)(?=\\s*[:;]|\\s*$)",
+      "captures": {
+        "1": {
+          "name": "meta.record-prefix.amo"
+        },
+        "2": {
+          "name": "keyword.control.action.de.amo"
+        },
+        "3": {
+          "name": "punctuation.separator.amo"
+        },
+        "4": {
+          "name": "entity.name.function.suffix.amo"
+        }
+      }
+    },
+    {
+      "name": "meta.command.action-en.amo",
+      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+)?)(ADD|AD|CHANGE|CHAN|CHA|DISPLAY|DISPL|DISP|DIS|DELETE|DEL|REGENERATE|ACTIVATE|ACT|DEACTIVATE|DEACT|DEA|COPY|RENAME|SWITCHOVER|TEST|SET|OUTPUT|COLLECT|OPTIMIZE)(-+)([A-Z][A-Z0-9]*)(?=\\s*[:;]|\\s*$)",
+      "captures": {
+        "1": {
+          "name": "meta.record-prefix.amo"
+        },
+        "2": {
+          "name": "keyword.control.action.en.amo"
+        },
+        "3": {
+          "name": "punctuation.separator.amo"
+        },
+        "4": {
+          "name": "entity.name.function.suffix.amo"
+        }
+      }
+    },
+    {
+      "name": "meta.command.action.amo",
+      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+)?)(EXECUTE|EXEC|REGEN|REGE|REG|START|STA|STOP|RESTART|DUMP|INPUT)(-+)([A-Z][A-Z0-9]*)(?=\\s*[:;]|\\s*$)",
+      "captures": {
+        "1": {
+          "name": "meta.record-prefix.amo"
+        },
+        "2": {
+          "name": "keyword.control.action.amo"
+        },
+        "3": {
+          "name": "punctuation.separator.amo"
+        },
+        "4": {
+          "name": "entity.name.function.suffix.amo"
+        }
+      }
+    },
+    {
+      "name": "meta.command.action-de-lower.amo",
+      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+)?)(einrichten|einricht|einr|aendern|aend|ae|abfragen|abfr|ab|loeschen|loesch|loes|loe|regenerieren|einschalten|einsch|eins|ausschalten|aussch|auss|setzen|kopieren|pruefen|pruef|umschalten|sammeln|ausgabe|ausg|umbenennen|umb|optimieren)(-+)([a-z][a-z0-9]*)(?=\\s*[:;])",
+      "captures": {
+        "1": {
+          "name": "meta.record-prefix.amo"
+        },
+        "2": {
+          "name": "keyword.control.action.de.amo"
+        },
+        "3": {
+          "name": "punctuation.separator.amo"
+        },
+        "4": {
+          "name": "entity.name.function.suffix.amo"
+        }
+      }
+    },
+    {
+      "name": "meta.command.action-en-lower.amo",
+      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+)?)(add|ad|change|chan|cha|display|displ|disp|dis|delete|del|regenerate|activate|act|deactivate|deact|dea|copy|rename|switchover|test|set|output|collect|optimize)(-+)([a-z][a-z0-9]*)(?=\\s*[:;])",
+      "captures": {
+        "1": {
+          "name": "meta.record-prefix.amo"
+        },
+        "2": {
+          "name": "keyword.control.action.en.amo"
+        },
+        "3": {
+          "name": "punctuation.separator.amo"
+        },
+        "4": {
+          "name": "entity.name.function.suffix.amo"
+        }
+      }
+    },
+    {
+      "name": "meta.command.action-lower.amo",
+      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+)?)(execute|exec|regen|rege|reg|start|sta|stop|restart|dump|input)(-+)([a-z][a-z0-9]*)(?=\\s*[:;])",
+      "captures": {
+        "1": {
+          "name": "meta.record-prefix.amo"
+        },
+        "2": {
+          "name": "keyword.control.action.amo"
+        },
+        "3": {
+          "name": "punctuation.separator.amo"
+        },
+        "4": {
+          "name": "entity.name.function.suffix.amo"
+        }
+      }
+    },
+    {
+      "name": "meta.command.two-part.amo",
+      "match": "^(\\s*(?:M\\d+\\s+\\d+\\s+)?)([A-Z]+)(-+)([A-Z][A-Z0-9]*)(?=\\s*[:;])",
+      "captures": {
+        "1": {
+          "name": "meta.record-prefix.amo"
+        },
+        "2": {
+          "name": "keyword.control.prefix.amo"
+        },
+        "3": {
+          "name": "punctuation.separator.amo"
+        },
+        "4": {
+          "name": "entity.name.function.suffix.amo"
+        }
+      }
+    },
+    {
+      "name": "keyword.control.parameter.amo",
+      "match": "\\b(LANG|SLANG|KURZ|START|SYSTEM|GER|ENG|DURCHGEFUEHRT|GESTARTET|EXECUTED|STARTED)\\b"
+    },
+    {
+      "name": "constant.language.amo",
+      "match": "\\b(GER|ENG|KURZ|START|Y|N|NEIN|JA|YES|NO|SYSTEM|POOL|BSDUAL|COMLAN|POOL1|I-POOL1|BP|BS-PCI|DBLARGE)\\b"
+    },
+    {
+      "name": "keyword.operator.amo",
+      "match": "[&]{1,2}|,"
+    },
+    {
+      "name": "punctuation.terminator.amo",
+      "match": ";"
+    },
+    {
+      "name": "punctuation.separator.amo",
+      "match": ":"
+    },
+    {
+      "name": "entity.name.tag.amo",
+      "match": "\\bAMO-[A-Z0-9-]+\\b"
+    },
+    {
+      "name": "variable.parameter.amo",
+      "match": "\\b(HICOM|NOUN|LOG|DEV|TIME|USER|TSN|STTAB|TASK|FBT|ENGR\\d+|IDENTIFIKATION|ADINIT|STATUS|PROGRAMMSYSTEM|VERSIONSNUMMER|KORREKTURVERSIONSNUMMER|SACHNUMMER|SUBSYSTEM|DIR|OMF|CODEWORD|VERSION|SERIENNUMMER|HARDWARE-ID|EINGABEDATUM|TESTMODUS|BESTAETIGUNG|DUPLEX|LIZENZ)\\b"
+    },
+    {
+      "name": "entity.name.tag.status.amo",
+      "match": "\\b(FERTIG|NICHT|AKTIVIERT|NORMALZEIT|OST|GMTRTG|ZEITDIFF|SZDIFF|DONNERSTAG|DATUM|UHRZEIT|LAUFENDE|TAGESNUMMER)\\b"
+    }
+  ]
+}

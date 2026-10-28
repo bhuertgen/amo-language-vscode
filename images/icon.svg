@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <title>AMO Language Support</title>
+  <!-- Grundfläche: kräftiges Blau, trägt auf hellem und dunklem Hintergrund -->
+  <rect x="4" y="4" width="120" height="120" rx="24" ry="24" fill="#1F5FA8"/>
+  <g transform="translate(9 0)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Prompt-Zeichen ">" für die Kommandozeile -->
+    <path d="M22 37 L49 64 L22 91" stroke="#FFFFFF" stroke-width="14"/>
+    <!-- Signalwellen für die Telefonanlage -->
+    <g stroke="#F5A623" stroke-width="10">
+      <path d="M66.97 47.03 A24 24 0 0 1 66.97 80.97"/>
+      <path d="M78.28 35.72 A40 40 0 0 1 78.28 92.28"/>
+      <path d="M89.6 24.4 A56 56 0 0 1 89.6 103.6"/>
+    </g>
+  </g>
+</svg>

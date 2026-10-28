@@ -1,0 +1,218 @@
+{
+  "name": "AMO Colorblind Friendly",
+  "type": "light",
+  "colors": {
+    "editor.background": "#FFFFFF",
+    "editor.foreground": "#000000",
+    "editor.lineNumberActiveForeground": "#0173B2",
+    "editor.lineNumberForeground": "#999999",
+    "editorCursor.foreground": "#000000",
+    "editorWhitespace.foreground": "#CCCCCC",
+    "editor.selectionBackground": "#B3D9FF",
+    "editor.findMatchBackground": "#FFE680",
+    "editor.findMatchHighlightBackground": "#FFFF99",
+    "editor.findMatchBorder": "#0173B2",
+    "editor.wordHighlightBackground": "#E6F2FF",
+    "editor.wordHighlightBorder": "#0173B2",
+    "editorError.foreground": "#CC0000",
+    "editorWarning.foreground": "#DE8F05",
+    "editorInfo.foreground": "#0173B2",
+    "editorHint.foreground": "#0173B2"
+  },
+  "tokenColors": [
+    {
+      "name": "Comment",
+      "scope": [
+        "comment",
+        "comment.line.amo"
+      ],
+      "settings": {
+        "foreground": "#6E6E6E",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "String",
+      "scope": [
+        "string",
+        "string.quoted.double.amo"
+      ],
+      "settings": {
+        "foreground": "#00795A"
+      }
+    },
+    {
+      "name": "Escape Character",
+      "scope": "constant.character.escape.amo",
+      "settings": {
+        "foreground": "#DE8F05",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Number - Decimal",
+      "scope": "constant.numeric.decimal.amo",
+      "settings": {
+        "foreground": "#0173B2",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Number - Hex",
+      "scope": "constant.numeric.hex.amo",
+      "settings": {
+        "foreground": "#0173B2",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Number - Version",
+      "scope": "constant.numeric.version.amo",
+      "settings": {
+        "foreground": "#0173B2",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Aktion deutsch (EINRICHTEN, AENDERN, ABFRAGEN …)",
+      "scope": "keyword.control.action.de.amo",
+      "settings": {
+        "foreground": "#A65A00",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Aktion englisch (ADD, CHANGE, DISPLAY …)",
+      "scope": "keyword.control.action.en.amo",
+      "settings": {
+        "foreground": "#8F3F8A",
+        "fontStyle": "bold italic"
+      }
+    },
+    {
+      "name": "Aktion sprachneutral (EXEC, REGEN, START …)",
+      "scope": "keyword.control.action.amo",
+      "settings": {
+        "foreground": "#404040",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Command Prefix (vor dem -)",
+      "scope": "keyword.control.prefix.amo",
+      "settings": {
+        "foreground": "#404040",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Command Suffix (nach dem -)",
+      "scope": "entity.name.function.suffix.amo",
+      "settings": {
+        "foreground": "#0173B2",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Command Separator (-)",
+      "scope": "punctuation.separator.amo",
+      "settings": {
+        "foreground": "#565656",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Keyword - Control",
+      "scope": "keyword.control.amo",
+      "settings": {
+        "foreground": "#DE8F05",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Keyword - Parameter",
+      "scope": "keyword.control.parameter.amo",
+      "settings": {
+        "foreground": "#0173B2",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Constant - Language",
+      "scope": "constant.language.amo",
+      "settings": {
+        "foreground": "#00795A",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Operator",
+      "scope": "keyword.operator.amo",
+      "settings": {
+        "foreground": "#565656",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Terminator (;)",
+      "scope": "punctuation.terminator.amo",
+      "settings": {
+        "foreground": "#565656",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Separator (:)",
+      "scope": "punctuation.separator.amo",
+      "settings": {
+        "foreground": "#565656"
+      }
+    },
+    {
+      "name": "Tag",
+      "scope": "entity.name.tag.amo",
+      "settings": {
+        "foreground": "#0173B2",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Tag - Status",
+      "scope": "entity.name.tag.status.amo",
+      "settings": {
+        "foreground": "#00795A",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Variable - Parameter",
+      "scope": "variable.parameter.amo",
+      "settings": {
+        "foreground": "#0173B2"
+      }
+    },
+    {
+      "name": "Heading",
+      "scope": "markup.heading.amo",
+      "settings": {
+        "foreground": "#0173B2",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Error Marker",
+      "scope": "meta.error-marker.amo",
+      "settings": {
+        "foreground": "#CC0000",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Satzpräfix der samtxt-Regen (M2 1)",
+      "scope": "meta.record-prefix.amo",
+      "settings": {
+        "foreground": "#6E6E6E"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+# Kundendaten und Herstellermaterial - nie veröffentlichen
+Code-Beispiele/
+doku/
+memory/
+*.pdb
+*.pdb.*
+*.samtxt
+*.zip
+*.pdf
+
+# Interne Projektdokumente
+INDEX.md
+SUMMARY.md
+STRUCTURE.md
+QUICKSTART.md
+INSTALLATION.md
+
+# Build / Tools
+*.vsix
+node_modules/
+out/
+.claude/
+.vscode/
+.DS_Store
+examples.amo
+AMO_SYNTAX_ANALYSE.md

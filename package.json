@@ -1,0 +1,106 @@
+{
+  "name": "amo-language",
+  "displayName": "AMO for OpenScape 4000 / HiPath 4000",
+  "description": "Syntax highlighting, snippets and colorblind-friendly themes for AMO scripts and regen files of OpenScape 4000 / HiPath 4000 PBX systems.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/bhuertgen/amo-language-vscode#readme",
+  "bugs": {
+    "url": "https://github.com/bhuertgen/amo-language-vscode/issues"
+  },
+  "publisher": "bhuertgen",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Themes"
+  ],
+  "keywords": [
+    "amo",
+    "openscape 4000",
+    "hipath 4000",
+    "openscape",
+    "hipath",
+    "unify",
+    "mitel",
+    "siemens",
+    "pbx",
+    "telefonanlage",
+    "tk-anlage",
+    "regen",
+    "regenerierung",
+    "amo script",
+    "amo file",
+    "samtxt",
+    "syntax highlighting",
+    "snippets",
+    "colorblind",
+    "telecom",
+    "telephony",
+    "telekommunikation",
+    "dial plan",
+    "wählplan",
+    "pabx",
+    "voip",
+    "pdb",
+    "pdb2txt",
+    "hicom 300",
+    "administration"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "amo",
+        "aliases": [
+          "AMO",
+          "amo"
+        ],
+        "extensions": [
+          ".amo",
+          ".amotext",
+          ".samtxt"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "amo",
+        "scopeName": "source.amo",
+        "path": "./syntaxes/amo.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "amo",
+        "path": "./snippets/amo.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "AMO Colorblind Friendly (Light)",
+        "uiTheme": "vs",
+        "path": "./themes/amo-colorblind-friendly.json"
+      },
+      {
+        "label": "AMO Colorblind Friendly (Dark)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/amo-colorblind-friendly-dark.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhuertgen/amo-language-vscode"
+  },
+  "author": "Boris Hürtgen",
+  "pricing": "Free",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#1F5FA8",
+    "theme": "dark"
+  },
+  "qna": "https://github.com/bhuertgen/amo-language-vscode/issues"
+}

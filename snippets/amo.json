@@ -1,0 +1,52 @@
+{
+  "Change Function": {
+    "prefix": "chfunc",
+    "body": "CHANGE-FUNCT:LANG=${1|GER,ENG|},SLANG=${2|GER,ENG|};",
+    "description": "Change language function"
+  },
+  "Query Date": {
+    "prefix": "qdate",
+    "body": "ABFR-DATE;",
+    "description": "Query system date and time"
+  },
+  "Register FBTID": {
+    "prefix": "regfbtid",
+    "body": "REG-FBTID;",
+    "description": "Regenerate FBTID data (REGENERIEREN-FBTID)"
+  },
+  "Query VEGAS": {
+    "prefix": "qvegas",
+    "body": "ABFR-VEGAS:${1|KURZ,LANG|},${2:ADS&SWU};",
+    "description": "Query VEGAS generation management"
+  },
+  "Query APS": {
+    "prefix": "qaps",
+    "body": "AB-APS:,PSEIN,\"${1:D0-EF0DC}\";",
+    "description": "Query a single program system (ABFRAGEN-APS, TYP=PSEIN, PS=...)"
+  },
+  "Regenerate APC": {
+    "prefix": "regapc",
+    "body": "REGEN-APC;",
+    "description": "Regenerate application management data (REGENERIEREN-APC)"
+  },
+  "Regenerate DBC": {
+    "prefix": "regdbc",
+    "body": "REGEN-DBC;",
+    "description": "Regenerate database configuration (REGENERIEREN-DBC)"
+  },
+  "Query Password": {
+    "prefix": "qpassw",
+    "body": "ABFR-PASSW;",
+    "description": "Query password data (ABFRAGEN-PASSW)"
+  },
+  "String Parameter": {
+    "prefix": "str",
+    "body": "\"${1:value}\"",
+    "description": "String parameter in quotes"
+  },
+  "Hex Value": {
+    "prefix": "hex",
+    "body": "H'${1:0000}",
+    "description": "Hexadecimal value"
+  }
+}
