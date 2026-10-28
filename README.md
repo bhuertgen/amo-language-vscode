@@ -152,7 +152,7 @@ AMO commands consist of an action and an AMO name (`ACTION-AMO:parameters;`). Th
 | `EINSCHALTEN` / `AUSSCHALTEN` | `ACTIVATE` (`ACT`) / `DEACTIVATE` (`DEACT`) |
 | `KOPIEREN` | `COPY` |
 
-Language-neutral actions: `EXECUTE`, `EXEC`, `REG`, `REGEN`, `START`, `STOP`, `RESTART`, `DUMP`, `INPUT`. Further English actions: `TEST`, `SET`, `OUTPUT`, `COLLECT`, `OPTIMIZE`, `RENAME`, `COPY`, `SWITCHOVER`; German: `SETZEN`, `KOPIEREN`, `PRUEFEN`, `UMSCHALTEN`, `SAMMELN`, `AUSGABE`, `UMBENENNEN`, `OPTIMIEREN`.
+Language-neutral actions: `EXECUTE`, `EXEC`, `EX`, `INIT`, `RES`, `REG`, `REGEN`, `START`, `STOP`, `RESTART`, `DUMP`, `INPUT`. Further English actions: `TEST`, `SET`, `OUTPUT`, `COLLECT`, `OPTIMIZE`, `RENAME`, `COPY`, `SWITCHOVER`; German: `SETZEN`, `KOPIEREN`, `PRUEFEN`, `UMSCHALTEN`, `SAMMELN`, `AUSGABE`, `UMBENENNEN`, `OPTIMIEREN`.
 
 The AMO names (e.g. `SELG`, `DEFTM`, `DTIM1`) are identical in both languages. The action words were compiled from the OpenScape 4000 V11 AMO descriptions (German and English edition) and checked against real regen files. Abbreviations that occur in practice are included; other abbreviations may not be colored.
 
