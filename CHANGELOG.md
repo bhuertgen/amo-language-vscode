@@ -2,7 +2,9 @@
 
 All notable changes to this extension are documented in this file.
 
-## [1.0.0] - Unreleased
+## [1.0.0] - 2026-11-03
+
+First store release on the VS Code Marketplace and Open VSX under publisher `bhu` (extension id `bhu.amo-language`).
 
 ### Added
 

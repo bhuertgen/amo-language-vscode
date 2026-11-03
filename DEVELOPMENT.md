@@ -1,92 +1,61 @@
-# Entwicklung und Test
+# Development
 
-Diese Datei beschreibt, wie die Extension lokal getestet, gebaut und veröffentlicht wird. Sie gehört nicht zum Paket (`.vscodeignore`).
+How to test, package and publish the extension locally. This file is not part of the package (`.vscodeignore`).
 
-## Voraussetzungen
+## Requirements
 
-- VS Code ab 1.60
-- Node.js (für `npx`)
-- Keine Abhängigkeiten, es gibt kein `npm install`
+- VS Code 1.60 or later
+- Node.js (for `npx`)
+- No dependencies, there is no `npm install`
 
-## Dateien
+## Files
 
-| Datei | Zweck |
+| File | Purpose |
 |---|---|
-| `package.json` | Manifest: Name, Version, Dateiendungen (`.amo .amotext .samtxt .gpc .pro`), Themes, Snippets |
-| `syntaxes/amo.tmLanguage.json` | TextMate-Grammatik (Scope `source.amo`) |
-| `themes/*.json` | Zwei Themes (hell, dunkel) mit den Farben für Deutsch, Englisch und neutral |
+| `package.json` | Manifest: name, version, file extensions (`.amo .amotext .samtxt .gpc .pro`), themes, snippets |
+| `syntaxes/amo.tmLanguage.json` | TextMate grammar (scope `source.amo`) |
+| `themes/*.json` | Two themes (light, dark) with colors for German, English and neutral actions |
 | `snippets/amo.json` | Snippets |
-| `language-configuration.json` | Klammern, Kommentar, Einrückung |
-| `testdaten/` | Erfundene Testdateien (keine Kundendaten), nicht im Paket |
+| `language-configuration.json` | Brackets, comments, indentation |
+| `testdaten/` | Made-up test files (no customer data), not packaged |
 
-## Im Entwicklungsfenster testen
+## Test in the Extension Development Host
 
-1. Projektordner in VS Code öffnen.
-2. **F5** drücken (Konfiguration „AMO-Extension testen“ in `.vscode/launch.json`, lokal, nicht im Repo). Es öffnet sich ein zweites Fenster mit der Extension und dem Ordner `testdaten`.
-3. Dateien in `testdaten` öffnen. Die Kommentare in den Dateien nennen die erwartete Färbung.
-4. Eines der Themes wählen: **Strg+K, Strg+T**, dann *AMO Colorblind Friendly (Light)* oder *(Dark)*.
-5. Nach Änderungen an Grammatik oder Themes im zweiten Fenster: **Strg+Umschalt+P → Developer: Reload Window**.
+1. Open the project folder in VS Code.
+2. Press **F5**. A second window (Extension Development Host) opens with the extension loaded. The launch configuration lives in `.vscode/launch.json`, which is local and not in the repo; if it is missing, create one via *Run > Add Configuration > VS Code Extension Development* (`"type": "extensionHost"`, `--extensionDevelopmentPath=${workspaceFolder}`).
+3. Open the files in `testdaten/`. Comments in the files describe the expected coloring.
+4. Select a theme: **Ctrl+K Ctrl+T**, then *AMO Colorblind Friendly (Light)* or *(Dark)*.
+5. After changing the grammar or themes: **Ctrl+Shift+P > Developer: Reload Window** in the second window.
 
-Fehlt `.vscode/launch.json`, mit *Ausführen → Konfiguration hinzufügen → VS Code Extension Development* neu anlegen. Wichtig sind `"type": "extensionHost"` und `--extensionDevelopmentPath=${workspaceFolder}`.
+To check which scope a token gets: **Ctrl+Shift+P > Developer: Inspect Editor Tokens and Scopes**.
 
-### Scope einer Farbe prüfen
-
-Cursor auf das Wort setzen, dann **Strg+Umschalt+P → Developer: Inspect Editor Tokens and Scopes**. Der Scope zeigt, ob die Grammatik oder das Theme das Problem ist.
-
-## Erwartete Färbung
-
-| Zeile | Erwartung |
-|---|---|
-| `EINRICHTEN-ANSU:…;`, `AB-DATE;`, `L-WABE:5;` | deutsche Aktion: orange, fett (`keyword.control.action.de.amo`) |
-| `ADD-ANSU:…;`, `CHANGE-FUNCT:…;`, `DISP-DATE;` | englische Aktion: violett, fett, kursiv (`keyword.control.action.en.amo`) |
-| `EXEC-APC;`, `EX-`, `INIT-`, `RES-`, `REGEN-`, `START-` | neutrale Aktion: grau, fett (`keyword.control.action.amo`) |
-| `chan-funct:…;`, `ab-date;` | wie oben, auch kleingeschrieben |
-| `M1 1 …`, `M2 1 …` | aktive Befehlszeile; das Präfix ist gedimmt |
-| Zeile beginnt mit `T1` oder `T2` | ganze Zeile Kommentar (auskommentierter Befehl) |
-| `A001`, `B001`, `C001` | Kopfzeile, Kommentar |
-| `-----…`, `Verbindung hergestellt zu: …` (`.pro`) | Kommentar |
-| `  <ABFRAGEN-APS:…;` (`.pro`) | Eingabezeile, Befehl gefärbt |
-| `L01:`, `M1:`, `H500:`, `F04:` am Zeilenanfang | Meldungscode, markiert |
-| `AFR1`, `IPV4`, `DEV1` | keine Versionsfärbung |
-| `1,2,3` | Zahlen getrennt, Kommas als Trenner |
-
-## Als Paket testen
+## Package and install
 
 ```powershell
 npx @vscode/vsce package --no-dependencies
 code --install-extension amo-language-1.0.0.vsix
-```
-
-Danach VS Code neu starten. Deinstallieren: `code --uninstall-extension bhuertgen.amo-language`.
-
-Inhalt des Pakets prüfen:
-
-```powershell
 npx @vscode/vsce ls --no-dependencies
 ```
 
-Erwartet sind 10 Dateien: `CHANGELOG.md`, `LICENSE`, `README.md`, `package.json`, `language-configuration.json`, `images/icon.png`, `snippets/amo.json`, `syntaxes/amo.tmLanguage.json` und die zwei Themes. Alles andere (`testdaten/`, `.vscode/`, Kunden- und Herstellerunterlagen) muss fehlen.
+Uninstall: `code --uninstall-extension bhu.amo-language`.
 
-## Gegen echte Dateien testen (ohne Daten auszugeben)
+`vsce ls` must list only the 10 package files: `CHANGELOG.md`, `LICENSE`, `README.md`, `package.json`, `language-configuration.json`, `images/icon.png`, `snippets/amo.json`, `syntaxes/amo.tmLanguage.json` and the two themes.
 
-Mit `vscode-textmate` und `vscode-oniguruma` (außerhalb des Repos installieren) lässt sich die Grammatik auf großen Regen prüfen. Gezählt werden nur Befehlszeilen und nicht erkannte Aktionswörter, nie der Inhalt. So wurde die Grammatik gegen 40 Regen (rund 620.000 Befehlszeilen), 45 `.gpc` und 40 `.pro` geprüft. Echte Kundendateien nie in das Repo legen.
+## Grammar rules
 
-## Regeln für die Grammatik
+- Commands are matched at line start, optionally after the record prefix `M1 1 ` or the input mark `<`. This avoids false positives in running text.
+- Command rules come before parameter keyword rules, otherwise e.g. `START` wins.
+- Add new action words only with evidence (manual or real regen files) and maintain all three lists (German, English, neutral), upper and lower case.
+- Backslashes in the JSON grammar are doubled (`\\s`); keep them intact when scripting edits.
 
-- Befehle stehen am Zeilenanfang, optional nach dem Satzpräfix `M1 1 ` oder der Eingabemarke `<`. Das verhindert Fehlalarme im Fließtext.
-- Die Regeln für Befehle stehen vor den Regeln für Parameter-Schlüsselwörter, sonst gewinnt zum Beispiel `START`.
-- Neue Aktionswörter nur mit Beleg aufnehmen (Handbuch oder echte Regen) und in allen drei Listen pflegen (deutsch, englisch, neutral), jeweils groß und klein.
-- Die Backslashes in der JSON-Datei werden doppelt geschrieben (`\\s`). Beim Skripten aufpassen, dass sie nicht verloren gehen.
+## Never commit vendor or customer data
 
-## Vor einem Release
+Vendor PDFs, PDB dumps, real regen files and customer data must never be committed. `doku/`, `Code-Beispiele/`, `memory/`, `*.pdf`, `*.pdb*`, `*.zip` and `*.samtxt` (except `testdaten/`) are gitignored. Before a release, check `git ls-files` and run `git grep -nE "[A-Z0-9]{60,}"` (must return nothing).
 
-1. `CHANGELOG.md` und Version in `package.json` anpassen.
-2. Testdateien in `testdaten` durchsehen (Färbung wie in der Tabelle).
-3. Paket bauen und installieren, Test wie oben.
-4. Prüfen, dass keine Kundendaten im Repo stehen: `git grep -nE "[A-Z0-9]{60,}"` darf keinen Treffer liefern (lange Codewörter), und die Dateiliste von `git ls-files` enthält nur die gewünschten Dateien.
-5. Veröffentlichen (erst nach Freigabe):
-   ```powershell
-   npx @vscode/vsce publish --no-dependencies    # VS Code Marketplace, Publisher bhuertgen, Token nötig
-   npx ovsx publish -p <token>                   # Open VSX, Namespace bhuertgen
-   ```
-   Für beide Stores muss der Publisher beziehungsweise Namespace `bhuertgen` vorher angelegt sein.
+## Release and publishing
+
+- Publisher: `bhu`, extension id `bhu.amo-language` (VS Code Marketplace and Open VSX namespace).
+- Update `CHANGELOG.md` and the version in `package.json`.
+- Publishing runs in GitHub Actions (`.github/workflows/publish.yml`) when a GitHub release is published; the release tag must match the `package.json` version (`v1.0.0` or `1.0.0`). Use *Run workflow* with `dry_run` to only build the VSIX.
+- VS Code Marketplace uses Trusted Publishing (OIDC). A policy for publisher `bhu` must allow repo `amo-language-vscode`, workflow `publish.yml`, environment `publish`.
+- Open VSX uses the `OVSX_PAT` secret in the `publish` environment; without it, Open VSX is skipped.
