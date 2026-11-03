@@ -1,6 +1,6 @@
 # AMO Language Support for VSCode
 
-Syntax highlighting and language support for **AMO** (the command language of OpenScape 4000 / HiPath 4000 PBX systems).
+Syntax highlighting and language support for **AMO** (**Administration and Maintenance Order**), the command language of Hicom 300 / HiPath 4000 / OpenScape 4000 PBX systems.
 
 ## Features
 
