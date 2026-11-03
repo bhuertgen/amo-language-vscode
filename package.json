@@ -1,7 +1,7 @@
 {
   "name": "amo-language",
   "displayName": "AMO for OpenScape 4000 / HiPath 4000",
-  "description": "Syntax highlighting, snippets and colorblind-friendly themes for AMO scripts and regen files of OpenScape 4000 / HiPath 4000 PBX systems.",
+  "description": "Syntax highlighting, snippets and colorblind-friendly themes for AMO (Administration and Maintenance Order) scripts and regen files of Hicom 300 / HiPath 4000 / OpenScape 4000 PBX systems.",
   "version": "1.0.0",
   "license": "MIT",
   "homepage": "https://github.com/bhuertgen/amo-language-vscode#readme",
