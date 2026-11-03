@@ -8,7 +8,7 @@
   "bugs": {
     "url": "https://github.com/bhuertgen/amo-language-vscode/issues"
   },
-  "publisher": "bhuertgen",
+  "publisher": "bhu",
   "engines": {
     "vscode": "^1.60.0"
   },

@@ -182,4 +182,4 @@ AMO, OpenScape, HiPath and Hicom are trademarks of their respective owners. This
 
 ## Related
 
-- PDB Parameter Data Base format
+- [os4k-wabe2excel](https://github.com/bhuertgen/os4k-wabe2excel): PowerShell tool for OpenScape 4000 dial plan (WABE) data
